@@ -1,0 +1,113 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f6f9;
+color:#333;
+}
+header{
+background:#1d4ed8;
+color:white;
+text-align:center;
+padding:25px;
+}
+.subtitulo{
+margin-top:10px;
+opacity:0.9;
+}
+main{
+max-width:900px;
+margin:30px auto;
+padding:20px;
+}
+.formulario{
+background:white;
+
+padding:20px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
+margin-bottom:30px;
+}
+.formulario h2{
+margin-bottom:20px;
+}
+.formulario input{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+.formulario button{
+width:100%;
+padding:12px;
+border:none;
+background:#2563eb;
+color:white;
+font-size:16px;
+border-radius:10px;
+cursor:pointer;
+}
+.formulario button:hover{
+background:#1e40af;
+}
+.lista{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+.tarea{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+margin-top:15px;
+border-radius:10px;
+background:#eef2ff;
+}
+.tarea-info{
+
+display:flex;
+flex-direction:column;
+gap:5px;
+}
+.tarea.completada{
+background:#dcfce7;
+}
+.tarea.completada strong{
+text-decoration:line-through;
+}
+.tarea-acciones{
+display:flex;
+gap:10px;
+}
+.tarea-acciones button{
+padding:8px 12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+.btn-eliminar{
+background:#ef4444;
+color:white;
+}
+.vacio{
+margin-top:20px;
+text-align:center;
+color:gray;
+}
+@media(max-width:700px){
+.tarea{
+flex-direction:column;
+gap:15px;
+align-items:flex-start;
+}
+.tarea-acciones{
+width:100%;
+justify-content:space-between;
+}
+}
