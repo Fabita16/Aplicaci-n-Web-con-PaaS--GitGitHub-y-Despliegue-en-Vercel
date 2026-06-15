@@ -34,9 +34,7 @@ cargarTareas();
 .subscribe();
 // Agregar tarea
 async function agregarTarea(){
-const titulo =
-5
-document.getElementById("titulo")
+const titulo = document.getElementById("titulo")
 .value.trim();
 const responsable =
 document.getElementById("responsable")
