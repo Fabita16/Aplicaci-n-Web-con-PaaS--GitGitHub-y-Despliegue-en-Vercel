@@ -4,57 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tareas Cloud - UAB FIT</title>
-
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Librería de Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Vincular CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Tareas Colaborativas en Tiempo Real</h1>
-    <p class="subtitulo">
-        Cloud Computing - UAB FIT | Tecnologías Emergentes
-    </p>
-</header>
+    <header>
+        <h1>Tareas Colaborativas</h1>
+        <p class="subtitulo">
+            Cloud Computing - UAB FIT | Tecnologías Emergentes
+        </p>
+    </header>
 
-<main>
+    <main>
+        <!-- SECCIÓN FORMULARIO -->
+        <section class="card formulario">
+            <h2>
+                <span>Nueva Tarea</span>
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="color:var(--primary)">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                </svg>
+            </h2>
+            
+            <form id="taskForm" onsubmit="event.preventDefault(); agregarTarea();">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <input type="text" id="titulo" placeholder="¿Cuál es la tarea?" required autocomplete="off">
+                    </div>
+                </div>
 
-    <section class="formulario">
-        <h2>Nueva Tarea</h2>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <input type="text" id="responsable" placeholder="Responsable (Opcional)" autocomplete="off">
+                    </div>
+                </div>
 
-        <input
-            type="text"
-            id="titulo"
-            placeholder="Título de la tarea">
+                <button type="submit" class="btn-agregar">
+                    Agregar Tarea
+                </button>
+            </form>
+        </section>
 
-        <input
-            type="text"
-            id="responsable"
-            placeholder="Responsable">
+        <!-- SECCIÓN LISTA -->
+        <section class="card lista">
+            <h2>
+                Lista de Tareas
+                <span id="contador">0</span>
+            </h2>
 
-        <button onclick="agregarTarea()">
-            Agregar tarea
-        </button>
-    </section>
+            <div id="tareas-container">
+                <!-- Las tareas se insertan aquí mediante JS -->
+                <div class="vacio">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                    </svg>
+                    <p>No hay tareas registradas aún.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <section class="lista">
-
-        <h2>
-            Lista de Tareas
-            <span id="contador"></span>
-        </h2>
-
-        <div id="tareas-container">
-            Cargando tareas...
-        </div>
-
-    </section>
-
-</main>
-
-<script src="app.js"></script>
-
+    <!-- Vincular JavaScript -->
+    <script src="app.js"></script>
 </body>
 </html>
