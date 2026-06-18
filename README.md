@@ -48,3 +48,6 @@ git clone https://github.com/Fabita16/Aplicaci-n-Web-con-PaaS--GitGitHub-y-Despl
 ## Capturas
 - LINK VERCEL = https://aplicaci-n-web-con-paa-s-git-git-hu.vercel.app
 
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
